@@ -1,17 +1,17 @@
 FROM python:3.9.2-slim-buster
+
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ="Asia/Kolkata"
 
 # Install dependencies
-RUN apt-get -qq update && \
-    apt-get -qq install -y \
+RUN apt-get update && \
+    apt-get install -y \
     git \
     ffmpeg \
     mediainfo \
     build-essential \
     mkvtoolnix \
-    fontconfig && \
-    apt-get clean
+    fontconfig
 
 COPY . .
 
