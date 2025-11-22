@@ -4,8 +4,14 @@ ENV TZ="Asia/Kolkata"
 
 # Install dependencies
 RUN apt-get -qq update && \
-    apt-get -qq install -y git ffmpeg mediainfo build-essential mkvtoolnix fontconfig && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get -qq install -y \
+    git \
+    ffmpeg \
+    mediainfo \
+    build-essential \
+    mkvtoolnix \
+    fontconfig && \
+    apt-get clean
 
 COPY . .
 
